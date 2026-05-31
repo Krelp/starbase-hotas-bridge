@@ -1,95 +1,135 @@
 # Starbase HOTAS Bridge
 
-Maps VKB (and other) HOTAS flight sticks to keyboard inputs for [Starbase](https://store.steampowered.com/app/454120/Starbase/) using PWM (pulse-width modulation) — giving analog-feeling control from digital key presses.
+> **Best experienced with VKB dual-stick + pedals** — pre-tuned profiles included out of the box.
 
-## ⚡ Quick Start (No setup required)
-
-1. **Double-click `launch.bat`**
-
-That's it. The launcher automatically:
-- Detects if Python is installed, downloads and installs it if not
-- Installs all required packages (pygame, pynput, PyQt6)
-- Launches the app
-
-On the first run it may take 1–2 minutes to install. Every run after that starts in seconds.
-
-> **Note:** Windows may show a SmartScreen warning because the `.bat` file is new. Click **More info → Run anyway**.
+Maps HOTAS flight sticks to keyboard inputs for [Starbase](https://store.steampowered.com/app/454120/Starbase/) using PWM (pulse-width modulation), giving analog-feeling precision control from digital key presses.
 
 ---
 
-## 🎮 Supported Hardware
+## ⚡ Download & Run — No Setup Required
 
-Pre-tuned profile included for:
-- **VKBsim Gladiator EVO R SEM** — Right stick (Pitch / Roll / Yaw twist)
-- **VKBsim Gladiator EVO L** — Left stick / Throttle (Thrust + Strafe U/D)
-- **VKBSim T-Rudder** — Pedals (Strafe L/R)
+### Step 1 — Download the EXE
 
-Works with **any joystick** recognized by Windows. Use the DETECT button to map any axis.
-
----
-
-## 🛠 Setup Guide
-
-### Step 0 — Connect Your Devices
-Assign each physical device to its role using the dropdowns. Click **SCAN FOR DEVICES** if they don't appear.
-
-### Step 1 — Detect Axes
-In each movement card, click **DETECT**, move the physical axis, click the bar that lights up, and the axis is assigned.
-
-### Step 2 — Set Keys
-Click any key field and press the key. Works with shift, ctrl, alt, arrows, F-keys, etc.
-
-### Step 3 — Tune Feel
-- **Dead Zone** — How far to move before responding
-- **Maximum Speed** — How fast at full deflection
-- **Pulse Length** — Minimum hold time per key cycle (light taps vs heavy holds)
-- **Drag the 7 curve handles** to shape the response at each stick angle
-
----
-
-## 💾 Profiles & Autosave
-
-The app **automatically restores** your exact last state on every launch — profile, settings, theme, color choices. No manual saving required.
-
-Manual saves work like a video game: **SAVE** asks before overwriting, **SAVE AS** always prompts for a name.
-
----
-
-## 🎨 Themes
-
-Two themes in the top bar: **Space** (dark purple) and **Midnight** (pure black).
-
-Three color toggles (BG / TEXT / BTN) let you cycle each through 4 preset shades.
-
----
-
-## 📁 Files
+Go to the [**Releases**](../../releases) page and download:
 
 ```
-starbase-hotas-bridge/
-├── launch.bat              ← Double-click to run (auto-installs everything)
-├── starbase_hotas.py       ← Main application
-├── README.md               ← This file
-└── hotas_profiles/
-    └── VKB Default.json    ← Pre-tuned VKB profile
+StarbaseHOTASBridge.exe
+```
+
+### Step 2 — Run It
+
+Double-click `StarbaseHOTASBridge.exe`.
+
+**That's it.** No Python. No install. No setup. Just run it.
+
+> **Windows SmartScreen warning?** Click **More info → Run anyway**.  
+> This is normal for new unsigned apps downloaded from the internet.
+
+Your profiles and settings are saved automatically to `Documents\StarbaseHOTAS\` and persist between sessions.
+
+---
+
+## 🎮 Recommended Hardware — VKB Setup
+
+This app was designed and tuned specifically for the **VKB dual-stick + pedals** configuration:
+
+| Device | Role |
+|--------|------|
+| **VKBsim Gladiator EVO R SEM** | Right stick — Pitch, Roll, Yaw (twist) |
+| **VKBsim Gladiator EVO L** | Left stick — Thrust, Strafe Up/Down (twist) |
+| **VKBSim T-Rudder** | Pedals — Strafe Left/Right |
+
+### Why VKB?
+
+The VKB Gladiator EVO sticks have high-resolution sensors, clean analog output, and a twist axis on each grip — giving you 6-DOF spacecraft control without using thumb hats. The T-Rudder adds dedicated left/right strafe on a third device. Together they cover all 6 movement axes Starbase uses, with no axis conflicts and no compromises.
+
+A **pre-tuned profile** with custom response curves for every axis is loaded automatically on first launch.
+
+---
+
+## 🕹 Other HOTAS Hardware
+
+Any joystick Windows recognizes will work. On first launch, choose **Start Blank** and use the **DETECT** button in each movement card to map your axes manually.
+
+Popular alternatives that work well:
+- Thrustmaster T.16000M FCS (stick + throttle)
+- Logitech X56 / X52
+- Thrustmaster HOTAS Warthog
+- Any single joystick with a twist axis
+
+---
+
+## 🛠 How It Works
+
+The app pulses keyboard keys at 20 Hz. Stick deflection controls how long each key is held:
+
+- **Light stick touch** → short key taps → slow, precise movement
+- **Full deflection** → long key holds → fast movement
+- **Pulse Length** slider → minimum hold per cycle (makes light inputs feel solid)
+- **7 draggable curve handles** → shape the exact response at every stick angle
+
+This gives you analog-feeling control in a game that only accepts keyboard input.
+
+---
+
+## 🎨 Interface
+
+- **Space** and **Midnight** themes
+- Three color toggles (BG / TEXT / BTN) to customize each theme
+- The app remembers your exact state between sessions — theme, profile, curve shapes, everything
+
+---
+
+## 💾 Profiles
+
+The app autosaves your state continuously. Manual saves work like a video game:
+- **SAVE** — asks before overwriting
+- **SAVE AS** — always prompts for a name
+- **LOAD** — switch between saved configurations
+
+---
+
+## 📁 File Structure
+
+After first launch, your data lives here:
+
+```
+Documents\StarbaseHOTAS\
+├── VKB Default.json        ← Pre-tuned VKB profile (copied on first run)
+├── .autosave.json          ← Continuous autosave (do not delete)
+└── .session_state.json     ← Theme and swatch settings
 ```
 
 ---
 
-## 🔧 How PWM Works
+## 🔨 For Developers — Build From Source
 
-The app pulses keyboard keys at 20 Hz. Stick deflection controls the duty cycle:
-- Gentle stick → short key taps → slow, precise movement
-- Full stick → long key holds → fast movement
-- **Pulse Length** sets a minimum hold so even light inputs feel solid
+If you want to build the exe yourself or run from source:
+
+1. Install Python 3.11+ from [python.org](https://www.python.org) (check **Add to PATH**)
+2. Run `launch.bat` to install dependencies and launch the script directly
+3. Run `build_exe.bat` to build a standalone `StarbaseHOTASBridge.exe`
+
+Source files:
+```
+starbase_hotas.py           ← Main application (single file)
+launch.bat                  ← Run from source with auto-dependency install
+build_exe.bat               ← Build the .exe with PyInstaller
+StarbaseHOTASBridge.spec    ← PyInstaller config
+```
 
 ---
 
-## 📋 Requirements (auto-installed by launch.bat)
+## 📋 Default VKB Key Bindings
 
-- Windows 10/11
-- Python 3.10+ (downloaded automatically if missing)
-- pygame, pynput, PyQt6 (installed automatically)
+| Movement | Left Key | Right Key |
+|----------|----------|-----------|
+| Yaw | Q (turn left) | E (turn right) |
+| Pitch | W (nose up) | S (nose down) |
+| Roll | A (roll left) | D (roll right) |
+| Thrust | Shift (forward) | Ctrl (backward) |
+| Strafe L/R | ← Arrow | → Arrow |
+| Strafe U/D | ↓ Arrow | ↑ Arrow |
 
 ---
 
@@ -97,4 +137,4 @@ The app pulses keyboard keys at 20 Hz. Stick deflection controls the duty cycle:
 
 MIT — free to use, modify, and share.
 
-Made for the Starbase community. Share it on Discord!
+**Made for the Starbase community.** Share it on the [Starbase Discord](https://discord.gg/starbase)!
