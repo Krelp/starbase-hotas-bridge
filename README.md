@@ -3,6 +3,7 @@
 > **Best experienced with VKB dual-stick + pedals** — pre-tuned profiles included out of the box.
 
 Maps HOTAS flight sticks to keyboard inputs for [Starbase](https://store.steampowered.com/app/454120/Starbase/) using PWM (pulse-width modulation), giving analog-feeling precision control from digital key presses.
+
 ---
 Screenshots
 ---
@@ -143,4 +144,4 @@ StarbaseHOTASBridge.spec    ← PyInstaller config
 
 MIT — free to use, modify, and share.
 
-**Made for the Starbase community.** Share it on the [Starbase Discord](https://discord.gg/starbase)! (May 31, 2026: Discord link is broken.)
+**Made for the Starbase community.** Share it on the [Starbase Discord](https://discord.gg/starbase)!
