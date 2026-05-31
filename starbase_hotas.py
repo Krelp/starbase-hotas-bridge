@@ -1732,6 +1732,25 @@ class MainWindow(QMainWindow):
         ]:
             l=QLabel(line); l.setStyleSheet("color:#c0b8e8;font-size:20px;padding:5px 0;"); key_l.addWidget(l)
         root.addWidget(key_grp)
+        root.addWidget(gap(14)); root.addWidget(hdivider()); root.addWidget(gap(14))
+
+        # ═══ SAVE LOCATION ════════════════════════
+        root.addWidget(section_heading("SAVE  LOCATION"))
+        root.addWidget(gap(8))
+        save_grp=QGroupBox("All profiles and settings are saved here")
+        save_l=QVBoxLayout(save_grp); save_l.setContentsMargins(18,22,18,16)
+        path_lbl=QLabel(str(PROFILES_DIR))
+        path_lbl.setStyleSheet("font-size:16px;font-family:Courier New;padding:8px;")
+        path_lbl.setTextInteractionFlags(Qt.TextInteractionFlag.TextSelectableByMouse)
+        path_lbl.setToolTip("Click and drag to select, then Ctrl+C to copy")
+        save_l.addWidget(path_lbl)
+        open_btn=QPushButton("OPEN  FOLDER")
+        open_btn.setFixedHeight(38); open_btn.setMinimumWidth(160)
+        open_btn.setToolTip("Open the save folder in Windows Explorer")
+        open_btn.clicked.connect(lambda: __import__('os').startfile(str(PROFILES_DIR)))
+        br=QHBoxLayout(); br.addWidget(open_btn); br.addStretch()
+        save_l.addLayout(br)
+        root.addWidget(save_grp)
         root.addWidget(gap(40))
 
     # ── First-launch welcome ─────────────────────────────────
