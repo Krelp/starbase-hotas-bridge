@@ -14,6 +14,10 @@ This is an early alpha release. Core functionality is working but you may encoun
 - Your joystick hardware
 
 ---
+<img width="1571" height="2041" alt="Screenshot 2026-05-31 154832" src="https://github.com/user-attachments/assets/fbaefcee-9c70-4b7f-9186-d9aa0ba3b272" />
+---
+<img width="1571" height="2037" alt="Screenshot 2026-05-31 154927" src="https://github.com/user-attachments/assets/95c4563f-9791-4f14-b226-0f9d9813735b" />
+---
 
 ## ⚡ Download & Run — No Setup Required
 
