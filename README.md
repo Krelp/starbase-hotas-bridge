@@ -13,6 +13,8 @@ This is an early alpha release. Core functionality is working but you may encoun
 - What happened vs what you expected
 - Your joystick hardware
 
+NOTE: Ctrl + S is bound to "save" by Windows, so you can't pitch while moving backwards, which also affects the game without HOTAS. You can only pitch in one direction while pressing ctrl, with or without HOTAS.
+
 ---
 <img width="1571" height="2041" alt="Screenshot 2026-05-31 154832" src="https://github.com/user-attachments/assets/fbaefcee-9c70-4b7f-9186-d9aa0ba3b272" />
 ---
