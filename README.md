@@ -5,6 +5,12 @@
 Maps HOTAS flight sticks to keyboard inputs for [Starbase](https://store.steampowered.com/app/454120/Starbase/) using PWM (pulse-width modulation) at 120Hz, giving analog-feeling precision control from digital key presses.
 
 ---
+SCREENSHOTS
+---
+<img width="1572" height="870" alt="Screenshot 2026-05-31 145512" src="https://github.com/user-attachments/assets/1a34ccbb-a9e1-4ea6-b016-a623efcf066e" />
+<img width="1571" height="1867" alt="Screenshot 2026-05-31 145736" src="https://github.com/user-attachments/assets/792de23d-213a-407d-bc94-d21a2920dd30" />
+<img width="1512" height="352" alt="Screenshot 2026-05-31 145642" src="https://github.com/user-attachments/assets/b63f5493-0056-44b2-9496-334da4666f92" />
+---
 
 ## ⚡ Download & Run — No Setup Required
 
