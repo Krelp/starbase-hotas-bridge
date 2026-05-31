@@ -7,7 +7,7 @@ Maps HOTAS flight sticks to keyboard inputs for [Starbase](https://store.steampo
 Screenshots
 ---
 <img width="1574" height="875" alt="Screenshot 2026-05-31 041415" src="https://github.com/user-attachments/assets/492255a4-f9c6-42c8-8b12-aa07be3508f6" />
-<img width="1573" height="875" alt="Screenshot 2026-05-31 041453" src="https://github.com/user-attachments/assets/61949ae2-5c93-4ca1-95ba-a8fe1db0cdbc" />
+<img width="1576" height="873" alt="Screenshot 2026-05-31 041852" src="https://github.com/user-attachments/assets/345a17ee-2bf9-4089-80ce-9a7e5c76f816" />
 <img width="1571" height="872" alt="Screenshot 2026-05-31 041511" src="https://github.com/user-attachments/assets/9d1f357e-6556-48f5-bd72-6376ffbeefc7" />
 ---
 
