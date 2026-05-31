@@ -30,16 +30,8 @@ NO_AXIS = 99
 import sys as _sys
 
 def _get_data_dir():
-    """Get the directory for user data (profiles, session state).
-    When running as a PyInstaller .exe, uses Documents/StarbaseHOTAS.
-    When running as a script, uses ./hotas_profiles next to the script.
-    """
-    if getattr(_sys, 'frozen', False):
-        # Running as compiled .exe
-        docs = Path.home() / "Documents" / "StarbaseHOTAS"
-    else:
-        # Running as script
-        docs = Path(__file__).parent / "hotas_profiles"
+    """Always use Documents/StarbaseHOTAS — consistent for both script and exe."""
+    docs = Path.home() / "Documents" / "StarbaseHOTAS"
     docs.mkdir(parents=True, exist_ok=True)
     return docs
 
