@@ -137,4 +137,4 @@ StarbaseHOTASBridge.spec    ← PyInstaller config
 
 MIT — free to use, modify, and share.
 
-**Made for the Starbase community.** Share it on the [Starbase Discord](https://discord.gg/starbase)!
+**Made for the Starbase community.** Share it on the [Starbase Discord](https://discord.gg/starbase)! (May 31, 2026: Discord link is broken.)
