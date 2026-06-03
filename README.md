@@ -23,7 +23,7 @@ NOTE: Ctrl + S is bound to "save" by Windows, so you can't pitch while moving ba
 
 ## ⚡ Download & Run — No Setup Required
 
-Go to the [**Releases**](../../releases) page and download `StarbaseHOTASBridge.exe`. Double-click to run. No Python, no install.
+Go to the [**Releases**](../../releases) page and download `StarbaseHOTASBridge.exe`. Double-click to run.
 
 > **Windows SmartScreen warning?** Click **More info → Run anyway**. Normal for new unsigned apps — full source is public on GitHub.
 
